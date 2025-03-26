@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distinct__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Entite_Juridique__c)&amp; &quot;_&quot; &amp; Code_article_ERP__c &amp; &quot;_&quot; &amp; Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Distinct</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

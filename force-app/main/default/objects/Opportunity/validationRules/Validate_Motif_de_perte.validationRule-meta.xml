@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Motif_de_perte</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT( $User.Bypass_VR__c ),
+ ISBLANK( TEXT(Motif_de_perte__c )) ,
+ ISPICKVAL(StageName, &quot;Close perdue&quot;)
+)</errorConditionFormula>
+    <errorMessage>Veuillez renseigner le motif de perte de l&apos;opportunité.</errorMessage>
+</ValidationRule>

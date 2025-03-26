@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_d_exp_dition__c</fullName>
+    <label>Type d&apos;expédition</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_de_service__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Groupage</fullName>
+                <default>false</default>
+                <label>Groupage</label>
+            </value>
+            <value>
+                <fullName>Conteneur complet</fullName>
+                <default>false</default>
+                <label>Conteneur complet</label>
+            </value>
+            <value>
+                <fullName>Groupage gerbable</fullName>
+                <default>false</default>
+                <label>Groupage gerbable</label>
+            </value>
+            <value>
+                <fullName>Groupage non gerbable</fullName>
+                <default>false</default>
+                <label>Groupage non gerbable</label>
+            </value>
+            <value>
+                <fullName>Remorque complète</fullName>
+                <default>false</default>
+                <label>Remorque complète</label>
+            </value>
+            <value>
+                <fullName>Groupage express</fullName>
+                <default>false</default>
+                <label>Groupage express</label>
+            </value>
+            <value>
+                <fullName>Groupage cargo</fullName>
+                <default>false</default>
+                <label>Groupage cargo</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Fret Maritime</controllingFieldValue>
+            <valueName>Groupage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fret Maritime</controllingFieldValue>
+            <valueName>Conteneur complet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fret Aérien</controllingFieldValue>
+            <valueName>Groupage express</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fret Aérien</controllingFieldValue>
+            <valueName>Groupage cargo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fret Routier</controllingFieldValue>
+            <valueName>Groupage gerbable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fret Routier</controllingFieldValue>
+            <valueName>Groupage non gerbable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fret Routier</controllingFieldValue>
+            <valueName>Remorque complète</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

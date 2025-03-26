@@ -1,0 +1,231 @@
+<apex:page standardController="Cotation__c" 
+           showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="false" 
+           renderAs="pdf" 
+           applyBodyTag="false" 
+           applyHtmlTag="false"
+           language="{!cotationLanguage}"
+           extensions="VF_Cotation_2_Controller">
+    <html>
+        <head>
+            
+            <style>
+                
+                @page {
+				margin-top: 4cm;
+                margin-bottom: 3.3cm;
+                margin-right: 0.8cm;
+                margin-left: 0.8cm;
+                
+				@top-center {
+                content: element(header);
+                }
+                @bottom-center {
+                content: element(footer);
+                }
+                
+                }
+                
+                .header{
+                	position: running(header);
+                }
+                .footer {
+                	display: block;
+                	position: running(footer);
+                }
+                * {
+                    font-family: Arial, sans-serif;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                    font-size: 12px;
+                }
+                th {
+                    background-color: #f9f9f9;
+                    font-size: 14px;
+                }
+                /* Extra space for the Comment column */
+                th.comment, td.comment {
+                    width: 250px;
+                }
+                p {
+                font-size:12px;
+                }
+                h1 {
+                	font-size:20px;
+                	font-style:italic;
+                	text-decoration: underline;
+                	font-family:sans-serif;
+                }
+            </style>
+        </head>
+        <body>
+             <div class="header">
+                   <apex:outputPanel rendered="{!Cotation__c.Opportunite__r.Entite_Juridique__c == 'TST'}">
+            			<img src="{!$Resource.TSTlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+        			</apex:outputPanel>
+          			<apex:outputPanel rendered="{!Cotation__c.Opportunite__r.Entite_Juridique__c == 'TRO'}">
+            			<img src="{!$Resource.TROlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+        			</apex:outputPanel>                            
+              </div>
+           	<div class="footer">
+                <img src="{!$Resource.PDF_Quota_2_Footer}" alt="Footer" style="width: 600px; height: 100px;margin-left:60px;"/>
+            </div>
+            <div style="width:100%;text-align:center;">
+                <h1>
+                {!Cotation__c.Name} - {!Cotation__c.Cotation_Number__c}
+                </h1>
+                <h1>
+                Client :     {!Cotation__c.Opportunite__r.Account.Name}
+                </h1>
+            </div>
+            <!-- Honoraire Section -->
+            <div style="width: 100%;margin-top:30px;font-size:14px;">
+                <div style="border: 1px solid #ddd; 
+                            background-color: #f9f9f9; 
+                            padding: 5px; 
+                            font-weight: bolder; 
+                            text-align: left;">{!$Label.Honoraire_Quota_VF}</div>
+                
+                <div style="border: 1px solid #ccc; 
+                            padding: 5px; 
+                            display: flex; 
+                            text-align: left;">
+                     <apex:outputText escape="false" value="{!Cotation__c.Honoraire_et_bareme__c }"  ></apex:outputText>
+                
+                </div>
+                
+            </div>
+            <div style="margin-top: 10px;">
+                <table>
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th colspan="3">Articles</th>
+                        </tr>
+                        <tr>
+                            <th style="font-size:12px;">{!$Label.PDF_Quota_2_DesignationColumn}</th>
+                            <th style="font-size:12px;">{!$Label.PDF_Quota_2_MontantColumn}</th>
+                            <th style="font-size:12px;" class="comment">{!$Label.PDF_Quota_2_CommentaireColumn}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <apex:variable var="totalPrix" value="{!0}" />
+                        <apex:variable var="totalTVA" value="{!0}" />
+                        <apex:repeat value="{!quotationLines}" var="line">
+                            <tr>
+                                <td>{!line.Article__r.Name}</td>
+                                <td>
+                                    <apex:outputText value="{0, number, #,##0.00}">
+                                        <apex:param value="{!line.Prix__c}" />
+                                    </apex:outputText>
+                                    {!line.CurrencyIsoCode}
+                                </td>
+                                <td class="comment">{!line.Commentaire__c}</td>
+                            </tr>
+                            <apex:variable var="totalPrix" value="{!totalPrix + line.Prix__c}" />
+                            <apex:variable var="totalTVA" value="{!totalTVA + line.Prix_Total_TTC__c}" />
+                        </apex:repeat>
+                            <tr style="margin-top:10px;">
+                                <td></td>
+                                <td style="font-weight:bold;">{!$Label.Sub_Total_Label} ({!Cotation__c.CurrencyIsoCode})</td>
+                                <td>
+                                    <apex:outputText value="{0, number, #,##0.00}">
+                                        <apex:param value="{!totalPrix}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="font-weight:bold;">{!$Label.Add_IVA_Label}</td>
+                                <td>
+                                    <apex:outputText value="{0, number, #,##0.00}">
+                                        <apex:param value="{! totalTVA - totalPrix}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="font-weight:bold;">Total</td>
+                                <td>
+                                    <apex:outputText value="{0, number, #,##0.00}">
+                                        <apex:param value="{!totalTVA}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+                <!-- Conditions particulières -->
+             <div style="width: 100%;margin-top:10px;font-size:14px;">
+                <div style="border: 1px solid #ddd; 
+                            background-color: #f9f9f9; 
+                            padding: 5px; 
+                            font-weight: bolder; 
+                            text-align: left;">{!$Label.PDF_Quota_2_ConditionsParticulierLabel}</div>
+                
+                <div style="border: 1px solid #ccc; 
+                            padding: 5px; 
+                            display: flex; 
+                            text-align: left;">
+                    <p> {!Cotation__c.Conditions_particulieres__c }</p>
+                
+                </div>
+            </div>
+
+            <!-- Conditions générales -->
+             <div style="width: 100%;margin-top:10px;font-size:14px;">
+                <div style="border: 1px solid #ddd; 
+                            background-color: #f9f9f9; 
+                            padding: 5px; 
+                            font-weight: bolder; 
+                            text-align: left;">{!$Label.PDF_Quota_2_ConditionsGeneralLabel}</div>
+                
+                <div style="border: 1px solid #ccc; 
+                            padding: 5px; 
+                            display: flex; 
+                            text-align: left;">
+                    
+                            <apex:outputPanel rendered="{!Cotation__c.Langue_des_conditions_generales__c == 'FR'}">
+                                <apex:outputField value="{!conditions.French_version__c}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!Cotation__c.Langue_des_conditions_generales__c == 'EN'}">
+                                <apex:outputField value="{!conditions.English_version__c}"/> 
+                            </apex:outputPanel>  
+                
+                </div>
+            </div>
+             
+             <!-- Modalités de paiement -->
+            <div style="width: 100%;margin-top:10px;font-size:14px;">
+                <div style="border: 1px solid #ddd; 
+                            background-color: #f9f9f9; 
+                            padding: 5px; 
+                            font-weight: bolder; 
+                            text-align: left;">{!$Label.PDF_Quota_2_ModalitePayment_Label}</div>
+                
+                <div style="border: 1px solid #ccc; 
+                            padding: 5px; 
+                            display: flex; 
+                            text-align: left;">
+                    <p> 
+                        <apex:outputText value="{!SUBSTITUTE(Cotation__c.Conditions_de_reglement__c, ' jours', '')}" escape="false"/>
+                        {!$Label.PDF_Quota_2_JourDateFacture_Label}
+                    </p>
+                
+                </div>
+            </div>
+            <div style="margin-top: 10px;line-height: 2;">
+                <p>{!$Label.PDF_Quota_2_FinalInfo_Label} {!$Label.Frais_de_timbre} {!Cotation__c.CurrencyIsoCode}</p>
+            </div>
+        </body>
+    </html>
+    
+</apex:page>

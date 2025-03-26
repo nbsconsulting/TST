@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TECH_Cnsnt_de_calcul_Chargeable_value__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+    TEXT(Type_d_exp_dition__c),
+    &quot;Groupage&quot;, 1000,
+    &quot;Conteneur complet&quot;, 0,
+    &quot;Groupage gerbable&quot;, 330,
+    &quot;Groupage non gerbable&quot;, 1750,
+    &quot;Remorque complète&quot;, 0,
+    &quot;Groupage express&quot;, 200,
+    &quot;Groupage cargo&quot;, 167,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Constante</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

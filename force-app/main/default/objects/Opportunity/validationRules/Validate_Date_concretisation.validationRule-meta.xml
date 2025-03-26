@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Date_concretisation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT( $User.Bypass_VR__c ),
+ Date_de_concretisation__c  &lt;=  Date_de_debut__c
+)</errorConditionFormula>
+    <errorMessage>La date de concrétisation doit être supérieure à la date de début.</errorMessage>
+</ValidationRule>

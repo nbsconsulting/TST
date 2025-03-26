@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Termes_de_reglement_credit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( $User.Bypass_VR__c ),
+    ISPICKVAL(Termes_de_Reglement__c, &quot;Crédit&quot;),
+        ISBLANK(TEXT(Conditions_de_reglement__c))
+)</errorConditionFormula>
+    <errorMessage>Veuillez renseigner le champ conditions de réglement</errorMessage>
+</ValidationRule>

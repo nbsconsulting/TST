@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nombre_de_cotation_en_Nego__c</fullName>
+    <label>Nombre de cotation en Nego</label>
+    <summaryFilterItems>
+        <field>Cotation__c.Etape__c</field>
+        <operation>equals</operation>
+        <value>Négociation</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Cotation__c.Opportunite__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

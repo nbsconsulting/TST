@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cotation_compact_layout</fullName>
+    <fields>Name</fields>
+    <fields>Niveau_de_service__c</fields>
+    <fields>CreatedById</fields>
+    <fields>Nombre_d_operation_d_exploitation__c</fields>
+    <fields>Volume__c</fields>
+    <fields>Volume_realise__c</fields>
+    <label>Cotation compact layout</label>
+</CompactLayout>

@@ -1,0 +1,460 @@
+<apex:page standardController="Cotation__c" 
+           showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="false" 
+           renderAs="pdf" 
+           applyBodyTag="false" 
+           applyHtmlTag="false"
+           extensions="VF_Cotation_Controller"
+           language="{!cotationLanguage}">
+    <html>
+        <head>
+            
+            <style>
+                
+                
+                @page {
+                margin-bottom: 3cm;
+                
+                @bottom-center {
+                content: element(footer);
+                }
+                
+                @bottom-right {
+                
+                content: "Page " counter(page) " of " counter(pages);
+                
+                }
+                }
+                
+                div.footer {
+                display: block;
+                padding: 10px;
+                position: running(footer);
+                }
+            </style>
+        </head>
+        <body>
+            <apex:outputPanel rendered="{!Cotation__c.Opportunite__r.Entite_Juridique__c == 'TST'}">
+                <img src="{!$Resource.TSTlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!Cotation__c.Opportunite__r.Entite_Juridique__c == 'TRO'}">
+                <img src="{!$Resource.TROlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+            </apex:outputPanel>  
+            <h1 style="font-size:20px;font-family:sans-serif;">{!Cotation__c.Type_de_service__c} {!$Label.from} {!Cotation__c.Marque__c} {!$Label.to} {!Cotation__c.Destination1__c} via  Veracruz({!Cotation__c.Incoterm__c}) </h1>
+            
+            
+            <div style="width: 100%; overflow: hidden; padding-top:5px;display:block;font-size:10px;font-family: sans-serif;">
+                <!--Divide the page to 2 columns-->
+                <!--first column-->
+                
+                <!-- 1 column-->
+                <div style="display: inline-block;width: 24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">Quote No</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Name}</div>
+                </div>
+                <!-- 2 column-->
+                <div style="display: inline-block;width: 24%;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.Niveau_de_service}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Niveau_de_service__c}</div>
+                </div>
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.valid_from}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Date_de_debut__c} </div>
+                </div>
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.Valid_to}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Date_de_validite__c}</div>
+                </div>
+                
+                
+                <div style="width:48.5%;margin-top:10px;display: inline-block;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.client}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__C.Opportunite__r.Account.Name}</div>
+                </div>
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.Frequence}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">
+                        <apex:outputText value="{!$Label.not_specified}"
+                                         rendered="{!ISBLANK(Cotation__c.Frequence__c)}"/> {!Cotation__c.Frequence__c}</div>
+                </div>
+                
+                <!--  -->
+                
+                <div style="display: inline-block;width:24%;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.transit_time}</div>
+                    
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">
+                        <apex:outputText value="{!$Label.not_specified}" 
+                                         rendered="{!ISBLANK(Cotation__c.Temps_de_transit_estime__c)}" />
+                        {!Cotation__c.Temps_de_transit_estime__c}</div>
+                </div>
+                
+                
+                <div style="width:48.5%;margin-top:10px;display: inline-block;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.commodity}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Marchandises__c}</div>
+                </div>
+                
+                
+                <div style="width: 48.5%;margin-top:10px;display: inline-block;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">Carrier</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Carrier__c}</div>
+                </div>  
+                
+                <div style="width:48.5%;margin-top:10px;display: inline-block;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.shipment_informations}</div>
+                    
+                </div>
+                
+                
+                <div style="width:48.5%;margin-top:10px;display: inline-block;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.issued_by}: {!Cotation__c.CreatedBy.Name}    </div>
+                    
+                </div>
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.weight}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Poids__c}</div>
+                </div>
+                <div style="display:inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.volume}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Volume__c}</div>
+                </div>
+                
+                <div style="display: inline-block;width: 24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">Chargeable</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!chargeableTotalValue}</div>
+                </div>
+                <div style="display:inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.Incoterm}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">{!Cotation__c.Incoterm__c}</div>
+                </div>
+                
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.custom_entries}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">
+                        <apex:outputText value="{!$Label.not_specified}" 
+                                         rendered="{!ISBLANK(Cotation__c.Entrees_douanieres__c)}" />
+                        {!Cotation__c.Entrees_douanieres__c}</div>
+                </div>
+                
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.invoice_lines} </div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">
+                        <apex:outputText value="{!$Label.not_specified}" 
+                                         rendered="{!ISBLANK(Cotation__c.Lignes_de_facture__c)}" />
+                        {!Cotation__c.Lignes_de_facture__c}</div>
+                </div>
+                
+                
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.value_of_goods}</div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">
+                        <apex:outputText value="{!$Label.not_specified}" 
+                                         rendered="{!ISBLANK(Cotation__c.Valeur_des_marchandises__c)}" />
+                        {!Cotation__c.Valeur_des_marchandises__c}</div>
+                </div>
+                
+                
+                <div style="display: inline-block;width:24%;margin-top:10px;">
+                    <div style="border: 1px solid #ccc; 
+                                background-color: #f4f4f4; 
+                                padding: 5px; 
+                                font-weight: bold; 
+                                text-align: left;">{!$Label.insurance_value} </div>
+                    
+                    <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">
+                        {!Cotation__c.Insurance_value__c}
+                        <apex:outputText value="{!$Label.not_specified}" 
+                                         rendered="{!ISBLANK(Cotation__c.Insurance_value__c)}" />
+                    </div>
+                    
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <div style="width: 97%;margin-top:10px;font-size:10px;font-family: sans-serif;">
+                <div style="
+                            padding: 5px; 
+                            font-weight: bold; 
+                            text-align: left;">{!$Label.quotation_info}:</div>
+                
+            </div>
+            <!-- second row-->
+            <div style="width: 97%;margin-top:10px;font-size:10px;font-family: sans-serif;">
+                <div style="border: 1px solid #ccc; 
+                            background-color: #f4f4f4; 
+                            padding: 5px; 
+                            font-weight: bold; 
+                            text-align: left;">{!$Label.loose_cargo_info}</div>
+                
+                <div style="border: 1px solid #ccc;padding: 5px;font-weight: bold; text-align: left;">Not yet recieved</div>
+            </div>
+            <!-- Third row-->
+            <div style="width: 97%;margin-top:10px;font-size:10px;">
+                <div style="border: 1px solid #ccc; 
+                            background-color: #f4f4f4; 
+                            padding: 5px; 
+                            font-weight: bold; 
+                            text-align: left;">{!$Label.quotation_details}</div>
+                
+                
+                
+                
+                
+                <!-- 3 Columns Section -->
+                <div style="border: 1px solid #ccc; 
+                            padding: 5px; 
+                            display: flex; 
+                            font-family: sans-serif;
+                            text-align: left;
+                            display:block;">
+                    
+                    
+                    <!--div style="width:53%;display:inline-block;">
+<div style="text-align:left;font-weight: bold;">Description</div>
+<div style="padding:3px;">
+Test
+</div>
+</div>
+
+<div style="width: 23%; padding: 5px;display:inline-block; ">
+<div style="font-weight: bold;">Charges</div>
+<div style="padding:3px;" >
+150.00
+</div>
+</div>
+
+<div style="width: 18%; padding: 5px;display:inline-block;">
+<div style="font-weight: bold;">IVA</div>
+<div style="padding:3px;">
+0.00
+</div>
+</div>-->
+                    <!-- <table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Charges</th>
+<th>IVA</th>
+</tr>
+</thead>
+<tbody>
+<apex:repeat value="{!quotationLines}" var="line">
+<tr>
+<td>{!line.Article__r.Name}</td>
+<td>{!line.Prix__c}</td>
+<td>{!line.Article__r.TVA__c}</td> 
+</tr>
+</apex:repeat>
+</tbody>
+</table>--> 
+                    
+                    <div class="container">
+                        <!-- Header Row -->
+                        <div style="display:block;">
+                            <div style="display:inline-block; width:53%;font-weight: bold;">Description</div>
+                            <div style="display:inline-block; width:26%;font-weight: bold;">{!$Label.charges}</div>
+                            <div style="display:inline-block; width:18 %;font-weight: bold;">{!$Label.TVA}</div>
+                        </div>
+                        
+                        
+                        <!-- Data Rows -->
+                        <apex:variable var="totalPrix" value="{!0}" />
+                        <apex:variable var="totalTVA" value="{!0}" />
+                        <apex:repeat value="{!quotationLines}" var="line">
+                            <div style="display:block;">
+                                <div style="display:inline-block; width:53%;padding :3px;">{!line.Article__r.Name}</div>
+                                <div style="display:inline-block; width:23%;padding :3px;">
+                                    <apex:outputText value="{0, number, #,##0.00}">
+                                        <apex:param value="{!line.Prix_Total_HT__c}" />
+                                    </apex:outputText>
+                                    {!line.CurrencyIsoCode}
+                                </div>
+                                <div style="display:inline-block; width:18%;padding-top:3px;">{!line.Article__r.TVA__c}</div>
+                            </div>
+                            <apex:variable var="totalPrix" value="{!totalPrix + line.Prix_Total_HT__c}" />
+                            <apex:variable var="totalTVA" value="{!totalTVA + line.Prix_Total_TTC__c}" />
+                        </apex:repeat>
+                        
+                        <div style="display:block;">
+                            <div style="display:inline-block; width:53%;padding :3px;font-weight: bold;"></div>
+                            <div style="display:inline-block; width:23%;padding :3px;font-weight: bold;border-bottom: 1px solid black;"></div>
+                            <div style="display:inline-block; width:18%;padding :3px;font-weight: bold;"></div>
+                        </div>
+                        <div style="display:block;">
+                            <div style="display:inline-block; width:53%;padding :3px;font-weight: bold;"></div>
+                            <div style="display:inline-block; width:23%;padding :3px;font-weight: bold;">{!$Label.Sub_Total_Label} ({!Cotation__c.CurrencyIsoCode})</div>
+                            <div style="display:inline-block; width:18%;padding :3px;font-weight: bold;">
+                                <apex:outputText value="{0, number, #,##0.00}">
+                                    <apex:param value="{!totalPrix}" />
+                                </apex:outputText>
+                            </div>
+                        </div>
+                        <div style="display:block;">
+                            <div style="display:inline-block; width:53%;padding :3px;font-weight: bold;"></div>
+                            <div style="display:inline-block; width:23%;padding :3px;font-weight: bold;">{!$Label.Add_IVA_Label}</div>
+                            <div style="display:inline-block; width:18%;padding :3px;font-weight: bold;">
+                                <apex:outputText value="{0, number, #,##0.00}">
+                                    <apex:param value="{! totalTVA - totalPrix}" />
+                                </apex:outputText>
+                            </div>
+                        </div>
+                        <div style="display:block;">
+                            <div style="display:inline-block; width:53%;padding :3px;font-weight: bold;"></div>
+                            <div style="display:inline-block; width:23%;padding :3px;font-weight: bold;">Total</div>
+                            <div style="display:inline-block; width:18%;padding :3px;font-weight: bold;">
+                                <apex:outputText value="{0, number, #,##0.00}">
+                                    <apex:param value="{!totalTVA}" />
+                                </apex:outputText>
+                            </div>
+                        </div>
+                    </div>            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>             
+                
+            </div>
+            <!-- fourth row-->
+            <div style="width: 97%;margin-top:10px;font-size:10px;font-family: sans-serif;border: 1px solid #ccc; z-index: 1;">
+                
+                <div style="font-weight: bold;text-align: left;padding:5px;"> {!$Label.remarks}</div>
+                <div style="padding:5px;margin-bottom:5px;">
+                    
+                    {!Cotation__c.Conditions_particulieres__c}
+
+                    <apex:outputPanel rendered="{!Cotation__c.Langue_des_conditions_generales__c == 'FR'}">
+                        <apex:outputField value="{!conditions.French_version__c}"/>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!Cotation__c.Langue_des_conditions_generales__c == 'EN'}">
+                        <apex:outputField value="{!conditions.English_version__c}"/> 
+                    </apex:outputPanel>  
+                </div>
+                
+            </div>
+            
+            <div style="width: 97%;margin-top:10px;font-size:10px;font-family: sans-serif;border: 1px solid #ccc; z-index: 1;">
+                
+                <div style="font-weight: bold;text-align: left;padding:5px;">{!$Label.disclaimer}</div>
+                <div style="padding:5px;margin-bottom:5px;">
+                    
+                    {!Cotation__c.Conditions_particulieres__c}                    
+                    
+                </div>
+            </div>
+        </body>
+    </html>
+    
+</apex:page>

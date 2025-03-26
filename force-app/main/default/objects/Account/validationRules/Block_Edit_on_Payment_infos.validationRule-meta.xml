@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Edit_on_Payment_infos</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   NOT( $User.Bypass_VR__c ),
+    ISPICKVAL( Statut__c , &quot;Compte qualifié&quot;),
+						ISPICKVAL( Statut__c ,  &quot;Client&quot;),
+						
+    OR(
+        ISCHANGED( Conditions_de_reglement__c ),
+        ISCHANGED( Plafond__c ),
+        ISCHANGED(  Termes_de_Reglement__c  ),
+        ISCHANGED(  Mode_de_reglement__c  )
+
+    )
+)</errorConditionFormula>
+    <errorMessage>Action non autorisée</errorMessage>
+</ValidationRule>

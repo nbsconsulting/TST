@@ -1,0 +1,213 @@
+<apex:page standardController="Account" renderAs="PDF" showHeader="false">
+    <head>
+        <style>
+            h1 {
+                color: #4682B4 !important;
+            }
+        </style>
+    </head>
+    <body>
+       
+        
+        
+        <!--contract de service-->
+        <div >
+          <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TST'}">
+            <img src="{!$Resource.TSTlogo}" class="logo" alt="Logo" style="margin-top: -50px; width: 150px; height: 150px;" />
+        </apex:outputPanel>
+          <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TRO'}">
+            <img src="{!$Resource.TROlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+        </apex:outputPanel>
+        
+         <h1 style="font-family: Arial, sans-serif; font-size: 27px; text-align: center; padding:10px; margin-top: -30px;">
+            CONTRAT DE SERVICE / MISE EN COMPTE
+        </h1>
+            <div  style="width: 100%;display: block;font-size: 16px;">
+            
+                <div style=" width:90%; height: 20px; display: inline-block; border: 1px solid #000000;padding-left:15px; ">
+                 <div style="width:27%;display: inline-block;"><strong>Nom ou raison Sociale :</strong></div>
+                    <div style="width:50%;display: inline-block;">{!Account.Name}</div>      
+                </div>
+    
+            </div>
+            
+            
+          <div style="font-size: 16px;">
+            <div  style="width: 100%;display: block;">
+            
+               
+        
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                  <div style="width:25%;display: inline-block;"><strong>Adresse :</strong></div>
+                  <div style="width:70%;display:inline-block;">{!Account.BillingStreet}</div>
+                </div>
+                 <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:20%;display: inline-block;">    <strong>ICE :</strong></div>
+                   <div style="width:75%;display:inline-block;">{!Account.ICE_ID_TVA__c  }</div>
+                 </div>
+            
+            </div>
+            </div>
+            
+            <div style="font-size: 16px;">
+            <div  style="width: 100%;display: block;">
+            
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                     <div style="width:20%;display: inline-block;">    <strong>N°RC :</strong></div>
+                     <div style="width:75%;display:inline-block;">{!Account.N_RC__c  }</div>
+            </div>
+        
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:20%;display: inline-block;">    <strong>IF:</strong></div>
+                   <div style="width:75%;display:inline-block;">{!Account.IF__c  }</div>
+                </div>
+            </div>
+            </div>
+            
+            <div style="font-size: 16px;">
+            <div  style="width: 100%;display: block;">
+            
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                     <div style="width:30%;display: inline-block;"><strong>Téléphone :</strong></div>
+                    <div style="width:50%;display:inline-block;">{!Account.Phone}</div>
+                </div>
+        
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:25%;display: inline-block;"><strong>Email :</strong></div>
+                    <div style="width:70%;display:inline-block;">{!Account.Email__c}</div>
+                </div>
+            </div>
+            </div>
+            
+           
+          
+            <div  style="width: 100%;display: block;font-size: 16px;padding:10px;">
+            
+                     <div style="width:32%;display: inline-block;"><strong>Nom de l’interlocuteur désigné :</strong></div>
+                      <div style="width:60%;display:inline-block;">{!Account.Contact_principal__r.Name}</div>
+        
+               
+            </div>
+            
+               <h1 style="color: white; 
+    background-color: #05445e; 
+    font-size: 24px; 
+    text-align: center; 
+    padding: 5px; ">
+    Conditions Contractuelles
+</h1>
+
+ <div style="font-size: 16px;">
+            <div  style="width: 100%;display: block;">
+            
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                     <div style="width:50%;display: inline-block;"><strong>Numero de compte :</strong></div>
+                     <apex:outputPanel style="display:inline;" rendered="{!Account.Entite_Juridique__c = 'TST'}">
+            <div style="width:45%;display:inline-block;">{!Account.ID_TST__c}</div>
+        </apex:outputPanel>
+        <apex:outputPanel style="display:inline;" rendered="{!Account.Entite_Juridique__c = 'TRO'}">
+            <div style="width:45%;display:inline-block;">{!Account.ID_TRO__c}</div>
+        </apex:outputPanel>
+                </div>
+        
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:50%;display: inline-block;">    <strong>Plafond de crédit : </strong></div>
+                   <div style="width:30%;display:inline-block;">{!Account.Plafond__c      }</div>
+                </div>
+               
+            </div>
+            </div>
+            
+            <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:55%;display: inline-block;">    <strong>Caution ou garantie : </strong></div>
+                   <div style="width:30%;display:inline-block;">{!Account.Caution_ou_garantie__c  }</div>
+                </div>
+            </div>
+            
+             <div  style="width: 100%;font-size: 16px;text-align: center;">
+                   <div style=" width:50%; height: 20px; display: inline-block; border: 1px solid #000000;padding: 10px;">
+Délais de paiement : {!Account.Conditions_de_reglement__c} date de facture  </div>
+            </div>
+            
+         
+          <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:62%;display: inline-block;">    <strong>Prestations : </strong></div>
+                   <div style="width:25%;display:inline-block;">{!Account.Prestation__c}</div>
+                </div>
+            </div>
+            
+          <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   <div style="width:62%;display: inline-block;">    <strong>Transport international : </strong></div>
+                   <div style="width:25%;display:inline-block;">{!Account.Trafic__c   }</div>
+                </div>
+            </div>
+               
+            
+          <div  style="width: 100%;display: block;font-size: 16px;padding: 10px;">
+          <div style=" display: inline-block; width: 40%; height: 50px;  border: 1px solid #000000;padding: 10px;">
+Résiliation sans préavis pour le client sous
+condition d’un solde à Zéro Dirhams.    </div>
+      
+                <div  style="padding:15px;width:25%;display: inline-block;width: 40%;">Validité :</div>
+                <div style="width:25%;display:inline-block;">{!Account.Validite__c}</div>
+
+                
+            </div>
+                 </div>
+       
+            <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 50;"><strong>
+                   Clause particulière : 
+                </strong></div>
+                                <div style="width:40%;display:inline-block;">{!Account.Description}</div>
+
+            </div>
+             <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 100%;">
+                   Le signataire {!Account.Contact_principal__r.Name} au nom de {!Account.Name}
+                </div>
+            </div>
+             <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 100%;">
+                   Souscrit à une mise en compte auprès de la société <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TST'}">
+        TST
+        </apex:outputPanel>
+          <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TRO'}">
+        TRO
+        </apex:outputPanel> et engage sa société à régler nos factures dans les délais et
+aux conditions précitées selon les termes de ce contrat de service.
+                </div>
+            </div>
+            
+             <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   Fait à ……………………………….
+                </div>
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                  Le 
+             <apex:outputText value="{0,date, dd/MM/yyyy}">
+            <apex:param value="{!NOW()}" />
+        </apex:outputText>
+                </div>
+            </div>
+            
+             <div  style="width: 100%;display: block;font-size: 16px;">
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                   Signature Direction <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TST'}">
+        TST
+        </apex:outputPanel>
+          <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TRO'}">
+        TRO
+        </apex:outputPanel> :
+                </div>
+                 <div  style="padding:10px;display: inline-block;width: 40%;">
+                   Signature et cachet Direction client :
+                </div>
+            </div>
+            
+
+    </body>
+</apex:page>

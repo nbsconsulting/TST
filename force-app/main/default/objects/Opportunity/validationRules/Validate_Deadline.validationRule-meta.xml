@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Deadline</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( $User.Bypass_VR__c ),
+    ISPICKVAL( Type_de_vente__c , &quot;AO&quot;),
+    ISBLANK( Deadline__c )
+)</errorConditionFormula>
+    <errorDisplayField>Deadline__c</errorDisplayField>
+    <errorMessage>Le champ Deadline est obligatoire lorsque le Type de Vente est  AO.</errorMessage>
+</ValidationRule>

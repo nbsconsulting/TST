@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Termes_de_reglement_comptant</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+        NOT( $User.Bypass_VR__c ),
+        ISPICKVAL( Termes_de_Reglement__c , &quot;Comptant&quot;),
+        NOT(ISBLANK(TEXT(Conditions_de_reglement__c )))
+    )</errorConditionFormula>
+    <errorMessage>Pour un crédit pas besoin de préciser les conditions de reglement</errorMessage>
+</ValidationRule>

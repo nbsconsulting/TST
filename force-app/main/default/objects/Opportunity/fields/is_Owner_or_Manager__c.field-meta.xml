@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_Owner_or_Manager__c</fullName>
+    <formula>OR(
+    $User.Id = OwnerId, 
+    CONTAINS($UserRole.Name, &quot;Manager&quot;) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>is Owner or Manager</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

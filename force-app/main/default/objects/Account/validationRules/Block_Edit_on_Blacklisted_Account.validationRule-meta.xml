@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Edit_on_Blacklisted_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( $User.Bypass_VR__c ),
+    ISPICKVAL(PRIORVALUE(Statut__c), &quot;Blacklisté&quot;),
+    ISPICKVAL(Statut__c, &quot;Blacklisté&quot;)
+)</errorConditionFormula>
+    <errorMessage>Compte blacklisté. Modification non autorisé</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+Bonjour {!User.Manager},
+
+Je vous prie de bien vouloir examiner et approuver la cotation suivante : {!Cotation__c.Name} , {!Cotation__c.Link}.
+ Celle-ci est prête à être validée conformément à nos procédures. N'hésitez pas à me contacter si vous avez des questions ou des observations.
+
+Cordialement,
+{!User.FirstName} {!User.LastName}

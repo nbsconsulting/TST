@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Nombre_dossier_transit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT( $User.Bypass_VR__c ),
+ OR(
+   AND(
+     INCLUDES( Type_de_service__c , &quot;Transit&quot;) ,
+     ISBLANK( Nombre_de_dossier_transit__c )
+    ),
+   AND(
+     NOT(INCLUDES(Type_de_service__c, &quot;Transit&quot;)),
+     NOT(ISBLANK(Nombre_de_dossier_transit__c))
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Nombre_de_dossier_transit__c</errorDisplayField>
+    <errorMessage>Le champ Nombre de dossier de transit doit être rempli si le type de service est &apos;Transit&apos;.</errorMessage>
+</ValidationRule>

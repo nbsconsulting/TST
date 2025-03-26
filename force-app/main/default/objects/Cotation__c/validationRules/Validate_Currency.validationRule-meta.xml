@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Currency</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT($User.Bypass_VR__c),
+    ISCHANGED( CurrencyIsoCode ),
+     Bon_pour_accord__c  = TRUE
+)</errorConditionFormula>
+    <errorMessage>Impossible de modifier la devise pour une cotation ayant un bon pour accord.</errorMessage>
+</ValidationRule>

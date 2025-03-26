@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_des_frais_locaux__c</fullName>
+    <label>Total des frais locaux</label>
+    <summarizedField>Exploitation__c.Frais_Locaux__c</summarizedField>
+    <summaryForeignKey>Exploitation__c.Cotation__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

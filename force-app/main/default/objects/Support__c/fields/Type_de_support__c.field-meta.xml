@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_de_support__c</fullName>
+    <label>Type de support</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Palette</fullName>
+                <default>false</default>
+                <label>Palette</label>
+            </value>
+            <value>
+                <fullName>Conteneur</fullName>
+                <default>false</default>
+                <label>Conteneur</label>
+            </value>
+            <value>
+                <fullName>Remorque</fullName>
+                <default>false</default>
+                <label>Remorque</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
