@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Aéronautique</fullName>
+        <default>false</default>
+        <label>Aéronautique</label>
+    </standardValue>
+    <standardValue>
+        <fullName>High-tech</fullName>
+        <default>false</default>
+        <label>High-tech</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Textile</fullName>
+        <default>false</default>
+        <label>Textile</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Automobile</fullName>
+        <default>false</default>
+        <label>Automobile</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Industrie</fullName>
+        <default>false</default>
+        <label>Industrie</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pharmaceutique</fullName>
+        <default>false</default>
+        <label>Pharmaceutique</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Denrées Périssables</fullName>
+        <default>false</default>
+        <label>Denrées Périssables</label>
+    </standardValue>
+</StandardValueSet>

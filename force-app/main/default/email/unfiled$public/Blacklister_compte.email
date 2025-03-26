@@ -1,0 +1,6 @@
+Bonjour {!User.Manager}  ,
+
+Je souhaite obtenir votre approbation pour blacklister le compte {!Account.Name} , {!Account.Link} en raison de {!Account.Motif_blacklistage__c} . 
+
+Bien cordialement,
+{!Account.OwnerFullName}

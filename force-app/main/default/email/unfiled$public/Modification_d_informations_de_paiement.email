@@ -1,0 +1,10 @@
+Bonjour {!User.Manager} ,
+
+J'espère que tu vas bien.
+
+Je souhaitais te soumettre une demande de modification concernant certaines informations relatives aux modes de  paiements du compte {!Account.Name} , {!Account.Link} . 
+
+Merci d'avance pour ton retour.
+
+Bien à toi,
+{!Account.OwnerFullName}

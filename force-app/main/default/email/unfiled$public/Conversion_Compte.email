@@ -1,0 +1,5 @@
+Bonjour ,
+Je souhaiterais obtenir votre approbation pour qualifier le compte {!Account.Name} , {!Account.Link} . 
+Merci de me faire part de votre réponse dans les plus brefs délais.
+Bien à vous,
+{!Account.OwnerFullName}

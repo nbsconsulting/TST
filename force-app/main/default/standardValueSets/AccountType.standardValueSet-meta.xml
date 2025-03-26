@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Compte</fullName>
+        <default>true</default>
+        <label>Compte</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partenaire</fullName>
+        <default>false</default>
+        <label>Partenaire</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Confrère</fullName>
+        <default>false</default>
+        <label>Confrère</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Organisme</fullName>
+        <default>false</default>
+        <label>Organisme</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Étatique</fullName>
+        <default>false</default>
+        <label>Étatique</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,9 @@
+Bonjour  {!User.Manager},
+
+J'espère que vous allez bien.
+
+Je vous contacte pour demander votre approbation afin de débloquer le compte {!Account.Name} , {!Account.Link}. 
+
+Merci d'avance pour votre retour et votre validation.
+
+Cordialement,
