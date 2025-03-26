@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Client_Confrere</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( $User.Bypass_VR__c ),
+    ISPICKVAL(Client_confrere__c, &quot;Oui&quot;),
+    ISBLANK(ParentId)
+)</errorConditionFormula>
+    <errorMessage>Veuillez préciser le compte confrère.</errorMessage>
+</ValidationRule>

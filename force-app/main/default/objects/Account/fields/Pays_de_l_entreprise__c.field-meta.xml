@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pays_de_l_entreprise__c</fullName>
+    <label>Pays de l&apos;entreprise</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>France</fullName>
+                <default>false</default>
+                <label>France</label>
+            </value>
+            <value>
+                <fullName>Chine</fullName>
+                <default>false</default>
+                <label>Chine</label>
+            </value>
+            <value>
+                <fullName>Inde</fullName>
+                <default>false</default>
+                <label>Inde</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

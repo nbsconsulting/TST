@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Termes_de_Reglement__c</fullName>
+    <label>Termes de Règlement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Crédit</fullName>
+                <default>false</default>
+                <label>Crédit</label>
+            </value>
+            <value>
+                <fullName>Comptant</fullName>
+                <default>false</default>
+                <label>Comptant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

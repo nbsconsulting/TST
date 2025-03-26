@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dimension__c</fullName>
+    <label>Dimension</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>20&apos; General Purpose</fullName>
+                <default>false</default>
+                <label>20&apos; General Purpose</label>
+            </value>
+            <value>
+                <fullName>40&apos; General Purpose</fullName>
+                <default>false</default>
+                <label>40&apos; General Purpose</label>
+            </value>
+            <value>
+                <fullName>40&apos; General Purpose High Cube</fullName>
+                <default>false</default>
+                <label>40&apos; General Purpose High Cube</label>
+            </value>
+            <value>
+                <fullName>20&apos; Operating Reefer</fullName>
+                <default>false</default>
+                <label>20&apos; Operating Reefer</label>
+            </value>
+            <value>
+                <fullName>40&apos; Operating Reefer</fullName>
+                <default>false</default>
+                <label>40&apos; Operating Reefer</label>
+            </value>
+            <value>
+                <fullName>40&apos; Non-operating Reefer</fullName>
+                <default>false</default>
+                <label>40&apos; Non-operating Reefer</label>
+            </value>
+            <value>
+                <fullName>20&apos; Open Top (in-gauge)</fullName>
+                <default>false</default>
+                <label>20&apos; Open Top (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>40&apos; Open Top (in-gauge)</fullName>
+                <default>false</default>
+                <label>40&apos; Open Top (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>20&apos; Flatrack (in-gauge)</fullName>
+                <default>false</default>
+                <label>20&apos; Flatrack (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>40&apos; Flatrack (in-gauge)</fullName>
+                <default>false</default>
+                <label>40&apos; Flatrack (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>40&apos; High Cube Flatrack (in-gauge)</fullName>
+                <default>false</default>
+                <label>40&apos; High Cube Flatrack (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>20&apos; High Cube Open Top (in-gauge)</fullName>
+                <default>false</default>
+                <label>20&apos; High Cube Open Top (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>40&apos; High Cube Open Top (in-gauge)</fullName>
+                <default>false</default>
+                <label>40&apos; High Cube Open Top (in-gauge)</label>
+            </value>
+            <value>
+                <fullName>40&apos; High Cube Hard Top (in-gauge)</fullName>
+                <default>false</default>
+                <label>40&apos; High Cube Hard Top (in-gauge)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

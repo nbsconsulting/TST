@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statut__c</fullName>
+    <label>Statut</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prospect</fullName>
+                <default>true</default>
+                <label>Prospect</label>
+            </value>
+            <value>
+                <fullName>Compte qualifié</fullName>
+                <default>false</default>
+                <label>Compte qualifié</label>
+            </value>
+            <value>
+                <fullName>Client</fullName>
+                <default>false</default>
+                <label>Client</label>
+            </value>
+            <value>
+                <fullName>Blacklisté</fullName>
+                <default>false</default>
+                <label>Blacklisté</label>
+            </value>
+            <value>
+                <fullName>Client VIP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client VIP</label>
+            </value>
+            <value>
+                <fullName>Client habituel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client habituel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Nombre_Escales</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( $User.Bypass_VR__c ),
+    ISPICKVAL( Escale__c , &quot;Oui&quot;),
+    ISBLANK( Nombre_d_escale__c )
+)</errorConditionFormula>
+    <errorMessage>Veuillez renseigner le champ &apos;Nombre d&apos;escale&apos;.</errorMessage>
+</ValidationRule>

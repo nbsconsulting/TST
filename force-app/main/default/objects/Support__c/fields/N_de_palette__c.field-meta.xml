@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>N_de_palette__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Largeur__c) &amp; &quot;-&quot; &amp; TEXT(Longueur__c) &amp; &quot;-&quot; &amp; TEXT(Hauteur__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>N° de palette</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

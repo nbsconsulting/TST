@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Conditions_de_reglement_ancienne_valeur__c</field>
+        <formula>TEXT(Account.Conditions_de_reglement__c )</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Mode_de_reglement_ancienne_valeur__c</field>
+        <formula>TEXT(Account.Mode_de_reglement__c )</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Plafond_Ancienne_valeur__c</field>
+        <formula>Account.Plafond__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>TECH_AP_MAJ_Infos_Paiement__c</field>
+        <formula>True</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Termes_de_reglement_ancienne_valeur__c</field>
+        <formula>TEXT(Account.Termes_de_Reglement__c)</formula>
+    </fieldOverrides>
+    <label>MAJ Infos client</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Plafond__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Mode_de_reglement__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Termes_de_Reglement__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Conditions_de_reglement__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <type>Update</type>
+</QuickAction>

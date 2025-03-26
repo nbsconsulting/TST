@@ -1,0 +1,96 @@
+<apex:page standardController="Cotation__c" extensions="PDFController" 
+           showHeader="false" showQuickActionVfHeader="false">
+    <apex:slds />
+    <apex:form id="pdfForm">
+        <!-- Spinner for loading states -->
+        <div id="spinner" class="slds-spinner_container slds-hide">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinnerdot-a"></div>
+                <div class="slds-spinnerdot-b"></div>
+            </div>
+        </div>
+
+        <!-- Center-aligned buttons -->
+        <center style="margin-top: 20px;">
+            <!-- Instead of directly calling the Apex action, we open a modal for confirmation -->
+            <apex:commandButton value="Confirm" 
+                onclick="openModal(); return false;"
+                styleClass="slds-button slds-button_brand"/>
+            <apex:commandButton value="Deny" 
+                action="{!closeModal}"
+                onclick="showSpinner();"
+                styleClass="slds-button slds-button_neutral"/>
+        </center>
+        <br/>
+
+        <!-- PDF Preview -->
+        <center>
+            <apex:iframe height="800px" 
+                        width="800px" 
+                        src="/apex/{!quotaToBeCalled}?Id={!recordId}&cotationLanguage={!Cotation__c.Langue_des_conditions_generales__c}#toolbar=0" />
+        </center>
+
+        <!-- Modal Confirmation Dialog -->
+        <!-- The modal is hidden by default (display:none) and will be shown via JS -->
+        <div id="confirmationModal" class="slds-modal slds-fade-in-open" role="dialog" style="display:none;">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Confirm Save</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    Are you sure you want to save and associate this PDF to the cotation record?
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick="closeModal();">
+                        Deny
+                    </button>
+                    <button class="slds-button slds-button_brand" onclick="confirmSave();">
+                        Confirm
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <!-- Modal Backdrop -->
+        <div class="slds-backdrop slds-backdrop_open" id="modalBackdrop" style="display:none;"></div>
+
+        <!-- Apex ActionFunction to call the confirmPDF action -->
+        <apex:actionFunction name="confirmPDFAction" action="{!confirmPDF}" 
+                             oncomplete="hideSpinner(); closeModal();" />
+    </apex:form>
+
+    <!-- JavaScript for spinner and modal functionality -->
+    <script>
+        // Show the spinner by removing the 'slds-hide' class
+        function showSpinner() {
+            document.getElementById('spinner').classList.remove('slds-hide');
+        }
+
+        // Hide the spinner by adding the 'slds-hide' class
+        function hideSpinner() {
+            document.getElementById('spinner').classList.add('slds-hide');
+        }
+
+        // Open the modal dialog with a fade-in effect (SLDS handles the animation via CSS)
+        function openModal() {
+            var modal = document.getElementById('confirmationModal');
+            var backdrop = document.getElementById('modalBackdrop');
+            modal.style.display = 'block';
+            backdrop.style.display = 'block';
+        }
+
+        // Close the modal dialog
+        function closeModal() {
+            var modal = document.getElementById('confirmationModal');
+            var backdrop = document.getElementById('modalBackdrop');
+            modal.style.display = 'none';
+            backdrop.style.display = 'none';
+        }
+
+        // When the modal's Confirm button is clicked, show the spinner and call the Apex action
+        function confirmSave() {
+            showSpinner();
+            confirmPDFAction();
+        }
+    </script>
+</apex:page>

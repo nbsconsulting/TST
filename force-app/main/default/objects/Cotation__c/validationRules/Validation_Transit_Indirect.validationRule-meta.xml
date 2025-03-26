@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Transit_Indirect</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+        NOT( $User.Bypass_VR__c ),
+        ISPICKVAL( Type_de_transit_estime__c , &quot;Indirect&quot;),
+        OR(
+            ISBLANK( Temps_de_transit_depart__c ),
+            ISBLANK( Temps_de_transit_arrive__c )
+        )
+    )</errorConditionFormula>
+    <errorMessage>Les temps de transit départ et arrivée doivent être renseignés (Transit Indirect).</errorMessage>
+</ValidationRule>

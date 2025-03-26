@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_de_service__c</fullName>
+    <label>Type de service</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fret Maritime</fullName>
+                <default>false</default>
+                <label>Fret Maritime</label>
+            </value>
+            <value>
+                <fullName>Fret Aérien</fullName>
+                <default>false</default>
+                <label>Fret Aérien</label>
+            </value>
+            <value>
+                <fullName>Fret Routier</fullName>
+                <default>false</default>
+                <label>Fret Routier</label>
+            </value>
+            <value>
+                <fullName>Transit</fullName>
+                <default>false</default>
+                <label>Transit</label>
+            </value>
+            <value>
+                <fullName>Logistique</fullName>
+                <default>false</default>
+                <label>Logistique</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

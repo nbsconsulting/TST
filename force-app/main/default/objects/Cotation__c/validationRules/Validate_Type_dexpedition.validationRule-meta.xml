@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Type_dexpedition</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT( $User.Bypass_VR__c ),
+  ISBLANK( TEXT(Type_d_exp_dition__c) ),
+  OR(
+    ISPICKVAL(Type_de_service__c, &apos;Fret maritime&apos;),
+    ISPICKVAL(Type_de_service__c, &quot;Fret aérien&quot;),
+    ISPICKVAL(Type_de_service__c, &quot;Fret routier&quot;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Type_d_exp_dition__c</errorDisplayField>
+    <errorMessage>Le champ &apos;Type d&apos;expédition&apos; est obligatoire pour les services de fret maritime, aérien ou routier.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,189 @@
+<apex:page standardController="Account" renderAs="PDF" showHeader="false">
+    <head>
+        <style>
+            h1 {
+                color: #4682B4 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TST'}">
+            <img src="{!$Resource.TSTlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+        </apex:outputPanel>
+          <apex:outputPanel rendered="{!Account.Entite_Juridique__c == 'TRO'}">
+            <img src="{!$Resource.TROlogo}" class="logo" alt="Logo" style="margin-top: -60px; width: 150px; height: 150px;" />
+        </apex:outputPanel>
+        <h1 style="font-family: Arial, sans-serif; font-size: 27px; text-align: center; padding:10px; margin-top: -30px;">
+            FORMULAIRE DE GESTION DE COMPTE CLIENT
+        </h1>
+        
+        <div style="font-family: Arial, sans-serif; font-size: 14px; padding: 10px 50px;">
+    <!-- Date de création -->
+    <div style="width: 40%; display: inline-block; padding-right: 10px;">
+        <strong>Date de création:</strong>
+        <apex:outputText value="{0,date, dd/MM/yyyy}">
+            <apex:param value="{!NOW()}" />
+        </apex:outputText>
+    </div>
+    
+    <!-- Date de d'approbation -->
+    <div style="width: 40%; display: inline-block; padding-left: 10px;">
+        <strong>Date de d approbation:</strong>
+        <apex:outputText value="{0,date, dd/MM/yyyy}">
+            <apex:param value="{!Account.Date_d_approbation__c}" />
+        </apex:outputText>
+    </div>
+</div>
+
+<div style="font-family: Arial, sans-serif; font-size: 14px; padding: 10px 50px;">
+    <!-- Commercial -->
+    <div style="width: 40%; display: inline-block; padding-right: 10px;">
+        <strong>Commercial:</strong>
+        {!Account.Owner.Name}
+    </div>
+
+    <!-- Approbateur -->
+    <div style="width: 40%; display: inline-block; padding-left: 10px;">
+        <strong>Approbateur:</strong>
+        {!Account.Owner.Manager.Name}
+    </div>
+</div>
+
+
+
+        <!-- Section Informations Client -->
+        <div class="section">
+               <h1 style="color: white; 
+    background-color: #05445e; 
+    font-size: 24px; 
+    text-align: center; 
+    padding: 5px; ">
+    Informations Client
+</h1>
+                    
+                    <!-- row -->
+                    <div style="font-size: 16px;">
+            <div  style="width: 100%;display: block;">
+            
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:60%;display: inline-block;"><strong>Nom ou raison Sociale :</strong></div>
+                    <div style="width:25%;display: inline-block;">{!Account.Name}</div>
+                </div>
+                
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:60%; display: inline-block;"><strong>Activité de lentreprise :</strong></div>
+                    <div style="width:25%;display:inline-block;">{!Account.Industry}</div>
+                </div>
+            </div>
+  
+            
+            <div style="width: 100%;display: block;">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:60%;display: inline-block;"><strong>Email :</strong></div>
+                    <div style="width:25%;display:inline-block;">{!Account.Email__c}</div>
+                </div>
+                <div  style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:32%; display: inline-block;"><strong>Code postal :</strong></div>
+                    <div style="width:50%;display:inline-block;">{!Account.BillingPostalCode}</div>
+                </div>
+            </div>
+            
+            
+            <div style="width: 100%;display: block;">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:15%;display: inline-block;"><strong>Ville :</strong></div>
+                    <div style="width:75%;display:inline-block;">{!Account.BillingCity}</div>
+                </div>
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:30%;display: inline-block;"><strong>Téléphone :</strong></div>
+                    <div style="width:50%;display:inline-block;">{!Account.Phone}</div>
+                </div>
+            </div>
+            <div style="padding:10px;display: inline-block;width: 40%;">
+                <div style="width:60%;display: inline-block;"><strong>Adresse :</strong></div>
+                <div style="width:25%;display:inline-block;">{!Account.BillingStreet}</div>
+            </div>
+        </div>
+</div>
+        <!-- Section Informations Responsable Client -->
+        <div style="font-size: 16px;">
+             <h1 style="
+    color: white; 
+    background-color: #05445e; 
+    font-size: 24px; 
+    text-align: center; 
+    padding: 5px; ">
+                Informations Responsable Client </h1>
+            <div style="width: 100%;display: block;">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:42%;display: inline-block;"><strong>Nom du contact :</strong></div>
+                    <div style="width:40%;display:inline-block;">{!Account.Contact_principal__r.Name}</div>
+                </div>
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:25%;display: inline-block;"><strong>Fonction :</strong></div>
+                    <div style="width:55%;display:inline-block;">{!Account.Contact_principal__r.Fonction__c}</div>
+                </div>
+            </div>
+            <div style="width: 100%;display: block;">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:20%;display: inline-block;"><strong>Trafic :</strong></div>
+                    <div style="width:60%;display:inline-block;">{!Account.Trafic__c}</div>
+                </div>
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:25%;display: inline-block;"><strong>Service :</strong></div>
+                    <div style="width:55%;display:inline-block;">{!Account.Contact_principal__r.Service__c}</div>
+                </div>
+            </div>
+            <div style="padding:10px;display: inline-block;width: 100%;">
+                <div style="width:70%;display: inline-block;"><strong>Remarques particulières :</strong></div>
+                <div style="width:25%;display:inline-block;">{!Account.Description}</div>
+            </div>
+        </div>
+
+        <!-- Section Informations Comptables -->
+        <div style="font-size: 16px;">
+             <h1 style="
+    color: white; 
+    background-color: #05445e; 
+    font-size: 24px; 
+    text-align: center; 
+    padding: 5px; ">
+                       Informations Comptables</h1>
+            <div style="width: 100%;display: block;">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:20%;display: inline-block;">    <strong>N°RC :</strong>
+</div>
+                    <div style="width:75%;display:inline-block;">{!Account.N_RC__c  }</div>
+                </div>
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:15%;display: inline-block;"><strong>ICE :</strong></div>
+                    <div style="width:75%;display:inline-block;">{!Account.ICE_ID_TVA__c}</div>
+                </div>
+            </div>
+            <div style="width: 100%;display: block;">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:52%;display: inline-block;"><strong>Mode de règlement :</strong></div>
+                    <div style="width:25%;display:inline-block;">{!Account.Mode_de_reglement__c}</div>
+                </div>
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:55%;display: inline-block;"><strong>Termes de règlement :</strong></div>
+                    <div style="width:25%;display:inline-block;">{!Account.Termes_de_Reglement__c}</div>
+                </div>
+            </div>
+
+            <apex:outputPanel rendered="{!Account.Termes_de_Reglement__c == 'Crédit'}">
+                <div style="padding:10px;display: inline-block;width: 40%;">
+                    <div style="width:65%;display: inline-block;"><strong>Conditions de règlement :</strong></div>
+                    <div style="width:25%;display:inline-block;">{!Account.Conditions_de_reglement__c}</div>
+                </div>
+            </apex:outputPanel>
+        </div>
+        
+        
+        
+        
+       
+            
+
+    </body>
+</apex:page>

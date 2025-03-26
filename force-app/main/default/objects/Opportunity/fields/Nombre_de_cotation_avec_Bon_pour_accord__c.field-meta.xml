@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nombre_de_cotation_avec_Bon_pour_accord__c</fullName>
+    <label>Nombre de cotation avec Bon pour accord</label>
+    <summaryFilterItems>
+        <field>Cotation__c.Etape__c</field>
+        <operation>equals</operation>
+        <value>Bon pour accord</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Cotation__c.Opportunite__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

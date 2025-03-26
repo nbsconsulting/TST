@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TST_CL</fullName>
+    <fields>Name</fields>
+    <fields>AccountId</fields>
+    <fields>CloseDate</fields>
+    <fields>Duree_de_vie_l_opportunite__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Entite_Juridique__c</fields>
+    <label>TST CL</label>
+</CompactLayout>

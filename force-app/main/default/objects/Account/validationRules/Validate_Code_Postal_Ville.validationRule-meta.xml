@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Code_Postal_Ville</fullName>
+    <active>true</active>
+    <description>Les champs ville et code postal dans Adresse postal sont obligatoires.</description>
+    <errorConditionFormula>AND (
+  NOT( $User.Bypass_VR__c ),
+  OR(
+    ISBLANK(BillingCity), /* Code Postal manquant */
+    ISBLANK(BillingPostalCode) /* Ville manquante */
+
+ )
+)</errorConditionFormula>
+    <errorMessage>Ville et code postal sont obligatoires.</errorMessage>
+</ValidationRule>

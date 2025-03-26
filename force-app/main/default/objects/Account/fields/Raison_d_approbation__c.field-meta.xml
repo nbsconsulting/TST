@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Raison_d_approbation__c</fullName>
+    <label>Raison d&apos;approbation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Qualification du Compte</fullName>
+                <default>false</default>
+                <label>Qualification du Compte</label>
+            </value>
+            <value>
+                <fullName>Blacklist</fullName>
+                <default>false</default>
+                <label>Blacklist</label>
+            </value>
+            <value>
+                <fullName>Modification d&apos;informations de paiement</fullName>
+                <default>false</default>
+                <label>Modification d&apos;informations de paiement</label>
+            </value>
+            <value>
+                <fullName>Rejoindre Equipe</fullName>
+                <default>false</default>
+                <label>Rejoindre Equipe</label>
+            </value>
+            <value>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Conversion</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

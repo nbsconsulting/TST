@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsTeamMember__c</fullName>
+    <formula>CONTAINS(Account_Team_Members_IDs__c, $User.Id)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsTeamMember</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

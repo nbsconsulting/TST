@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Motif_de_perte__c</fullName>
+    <label>Motif de perte</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Non faisabilité</fullName>
+                <default>false</default>
+                <label>Non faisabilité</label>
+            </value>
+            <value>
+                <fullName>Concurrence</fullName>
+                <default>false</default>
+                <label>Concurrence</label>
+            </value>
+            <value>
+                <fullName>Service non disponible</fullName>
+                <default>false</default>
+                <label>Service non disponible</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

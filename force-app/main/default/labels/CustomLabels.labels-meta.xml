@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Add_IVA_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add IVA Label</shortDescription>
+        <value>Ajout TVA</value>
+    </labels>
+    <labels>
+        <fullName>Frais_de_timbre</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Frais de timbre</shortDescription>
+        <value>50</value>
+    </labels>
+    <labels>
+        <fullName>Frequence</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Frequence</shortDescription>
+        <value>Fréquence</value>
+    </labels>
+    <labels>
+        <fullName>Honoraire_Quota_VF</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Honoraire_Quota_VF</shortDescription>
+        <value>Honoraire</value>
+    </labels>
+    <labels>
+        <fullName>Incoterm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Incoterm</shortDescription>
+        <value>Incoterm</value>
+    </labels>
+    <labels>
+        <fullName>Niveau_de_service</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Niveau_de_service</shortDescription>
+        <value>Niveau de service</value>
+    </labels>
+    <labels>
+        <fullName>Org_Applicable_TVA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Org Applicable TVA</shortDescription>
+        <value>20</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_1_ApplicableServiceTypes</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_1_ApplicableServiceTypes</shortDescription>
+        <value>Fret Maritime,Fret Aérien,Fret Routier</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_ApplicableServiceTypes</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_ApplicableServiceTypes</shortDescription>
+        <value>Transit,Logistique</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_CommentaireColumn</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_CommentaireColumn</shortDescription>
+        <value>Commentaire</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_ConditionsGeneralLabel</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_ConditionsGeneralLabel</shortDescription>
+        <value>Conditions générales</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_ConditionsParticulierLabel</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_ConditionsParticulierLabel</shortDescription>
+        <value>Conditions particulières</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_DesignationColumn</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_DesignationColumn</shortDescription>
+        <value>Désignation</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_FinalInfo_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_FinalInfo_Label</shortDescription>
+        <value>Tous les autres frais avancés pour votre compte feront l’objet de facturation à l’identique.
+Les dossiers avec factures sans valeur feront l‘objet de facturation de droits de timbre de</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_HT_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_HT_Label</shortDescription>
+        <value>HT</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_JourDateFacture_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_JourDateFacture_Label</shortDescription>
+        <value>jours date de facture</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_ModalitePayment_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_ModalitePayment_Label</shortDescription>
+        <value>Modalité de paiement</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_MontantColumn</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_MontantColumn</shortDescription>
+        <value>Montant HT</value>
+    </labels>
+    <labels>
+        <fullName>PDF_Quota_2_TVA_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PDF_Quota_2_TVA_Label</shortDescription>
+        <value>TVA</value>
+    </labels>
+    <labels>
+        <fullName>Sub_Total_Label</fullName>
+        <categories>Cotation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sub Total Label</shortDescription>
+        <value>Sous-total</value>
+    </labels>
+    <labels>
+        <fullName>TVA</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>TVA</shortDescription>
+        <value>TVA</value>
+    </labels>
+    <labels>
+        <fullName>Valid_to</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Valid_to</shortDescription>
+        <value>Valable pour</value>
+    </labels>
+    <labels>
+        <fullName>charges</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>charges</shortDescription>
+        <value>Frais</value>
+    </labels>
+    <labels>
+        <fullName>client</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>client</shortDescription>
+        <value>Client</value>
+    </labels>
+    <labels>
+        <fullName>commodity</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>commodity</shortDescription>
+        <value>Marchandise</value>
+    </labels>
+    <labels>
+        <fullName>custom_entries</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>custom_entries</shortDescription>
+        <value>Entrées douanières</value>
+    </labels>
+    <labels>
+        <fullName>disclaimer</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>disclaimer</shortDescription>
+        <value>Clause de non-responsabilité</value>
+    </labels>
+    <labels>
+        <fullName>from</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>from</shortDescription>
+        <value>from</value>
+    </labels>
+    <labels>
+        <fullName>insurance_value</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>insurance_value</shortDescription>
+        <value>Valeur d&apos;assurance</value>
+    </labels>
+    <labels>
+        <fullName>invoice_lines</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>invoice_lines</shortDescription>
+        <value>Lignes de facture</value>
+    </labels>
+    <labels>
+        <fullName>issued_by</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>issued_by</shortDescription>
+        <value>Délivré par</value>
+    </labels>
+    <labels>
+        <fullName>loose_cargo_info</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>loose_cargo_info</shortDescription>
+        <value>Informations sur la cargaison en vrac</value>
+    </labels>
+    <labels>
+        <fullName>not_specified</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>not_specified</shortDescription>
+        <value>Non spécifié</value>
+    </labels>
+    <labels>
+        <fullName>quotation_details</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>quotation_details</shortDescription>
+        <value>Détails de la cotation</value>
+    </labels>
+    <labels>
+        <fullName>quotation_info</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>quotation_info</shortDescription>
+        <value>Cette cotation s&apos;applique à l&apos;expédition suivante</value>
+    </labels>
+    <labels>
+        <fullName>remarks</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>remarks</shortDescription>
+        <value>Conditions générales</value>
+    </labels>
+    <labels>
+        <fullName>shipment_informations</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>shipment informations</shortDescription>
+        <value>Informations d&apos;expédition</value>
+    </labels>
+    <labels>
+        <fullName>to</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>to</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
+        <fullName>transit_time</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>transit_time</shortDescription>
+        <value>Temps de transit</value>
+    </labels>
+    <labels>
+        <fullName>valid_from</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>valid_from</shortDescription>
+        <value>Valable à partir de</value>
+    </labels>
+    <labels>
+        <fullName>value_of_goods</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>value_of_goods</shortDescription>
+        <value>Valeur des marchandises</value>
+    </labels>
+    <labels>
+        <fullName>volume</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>volume</shortDescription>
+        <value>Volume</value>
+    </labels>
+    <labels>
+        <fullName>weight</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>weight</shortDescription>
+        <value>Poids</value>
+    </labels>
+</CustomLabels>

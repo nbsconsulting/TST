@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GW_Constante__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    ISPICKVAL(Cotation__r.Type_de_service__c, &quot;Fret Maritime&quot;),
+    ISPICKVAL(Cotation__r.Type_d_exp_dition__c, &quot;Groupage&quot;)
+  ),
+  Gross_Weight__c / Cotation__r.TECH_Cnsnt_de_calcul_Chargeable_value__c,
+  0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GW / Constante</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

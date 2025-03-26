@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>Revert Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Revert Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Revrt_to_old_values</name>
+        <label>Revert to old values</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>Conditions_de_reglement__c</field>
+            <value>
+                <elementReference>$Record.Conditions_de_reglement_ancienne_valeur__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Mode_de_reglement__c</field>
+            <value>
+                <elementReference>$Record.Mode_de_reglement_ancienne_valeur__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Plafond__c</field>
+            <value>
+                <elementReference>$Record.Plafond_Ancienne_valeur__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Termes_de_Reglement__c</field>
+            <value>
+                <elementReference>$Record.Termes_de_reglement_ancienne_valeur__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>is_Rolledback__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Revrt_to_old_values</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$User.Bypass_Flow__c}),
+{!$Record.is_Rolledback__c}
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

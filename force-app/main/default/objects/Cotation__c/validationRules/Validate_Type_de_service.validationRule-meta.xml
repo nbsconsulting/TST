@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Type_de_service</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( $User.Bypass_VR__c ),
+    ISPICKVAL( Statut_d_approbation__c , &quot;Approuvé&quot;),
+    ISCHANGED( Type_de_service__c )
+)</errorConditionFormula>
+    <errorMessage>Type de service ne peut pas être modifié après approbation.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activite_de_l_entreprise__c</fullName>
+    <label>Activité de l&apos;entreprise</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aéronautique</fullName>
+                <default>false</default>
+                <label>Aéronautique</label>
+            </value>
+            <value>
+                <fullName>High-tech</fullName>
+                <default>false</default>
+                <label>High-tech</label>
+            </value>
+            <value>
+                <fullName>Textile</fullName>
+                <default>false</default>
+                <label>Textile</label>
+            </value>
+            <value>
+                <fullName>Industrie</fullName>
+                <default>false</default>
+                <label>Industrie</label>
+            </value>
+            <value>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+                <label>Automobile</label>
+            </value>
+            <value>
+                <fullName>Pharmaceutique</fullName>
+                <default>false</default>
+                <label>Pharmaceutique</label>
+            </value>
+            <value>
+                <fullName>Denrées Périssables</fullName>
+                <default>false</default>
+                <label>Denrées Périssables</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
